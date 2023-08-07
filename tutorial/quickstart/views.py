@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User,Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from tutorial.quickstart.serializers import UserSerializer,GroupSerializer
+from quickstart.serializers import UserSerializer,GroupSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """API ENDPOINT THAT allows user to be viewed or edited"""
@@ -10,7 +10,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class=UserSerializer
     permission_classes=[permissions.IsAuthenticated]
 
-class GroupViewset(viewsets.ModelViewSet):
+class GroupViewSet(viewsets.ModelViewSet):
     """API endpoimt that allows groiups to be viewed or edited
     """
     queryset=Group.objects.all()
